@@ -9,6 +9,7 @@ describe('ООП', () => {
 
             assert.strictEqual(point.x, 1);
             assert.strictEqual(point.y, 2);
+            assert.strictEqual(point.vectorLengthToCenter(), Math.sqrt(5))
         });
 
         it('Точка создается без параметров, x и y принимают нули как значение по умолчанию', () => {
@@ -65,12 +66,16 @@ describe('ООП', () => {
         it('проверка на пограничные случаи', () => {
             const queue = new core.Queue();
             // TODO:
+            assert.strictEqual(queue.push(1), undefined);
+            assert.strictEqual(queue.front(), 1)
             assert.strictEqual(true, true);
         });
 
         it('может создаться из массива', () => {
             const queue = new core.Queue([1,2,3,5]);
             // TODO:
+            assert.strictEqual(queue.push(8), undefined);
+            assert.strictEqual(queue.front(), 1)
             assert.strictEqual(true, true);
         });
     });

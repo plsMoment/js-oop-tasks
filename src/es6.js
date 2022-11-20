@@ -7,9 +7,8 @@
 // строку формата Имя Фамилия
 function fioToName(fio) {
     if(typeof fio != 'string') return false;
-    const parse = fio.split(' ');
-    const res = parse[1] + " " + parse[0];
-    return res;
+    const [f, i] = fio.split(' ');
+    return `${i} ${f}`;
 }
 
 // преобразуйте массив чисел так, чтобы в нем остались только
@@ -17,10 +16,10 @@ function fioToName(fio) {
 // присмотритесь к коллекции "Set"
 function filterUnique(array) {
     const resSet = new Set();
-    for (const val of array) {
+    for (let val of array) {
         resSet.add(val);
     }
-    return resSet.length === array.length ? array : Array.from(resSet);
+    return Array.from(resSet);
 }
 
 // Задача: разница зарплат
@@ -59,6 +58,7 @@ class Dictionary {
 
     delete(key) {
         if(typeof key === 'string') delete this._strDict[key];
+        else throw 'Not a string value';
     }
 
     values() {

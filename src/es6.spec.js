@@ -39,8 +39,11 @@ describe('es6', () => {
     describe('#Dictionary', () => {
         it('экземпляр класса создается', () => {
             const dic = new core.Dictionary();
-
             // TODO
+            assert.strictEqual(dic.add('test', 'temp'), undefined);
+            assert.deepEqual(dic.values(), {'test': 'temp'});
+            assert.strictEqual(dic.delete('test'), undefined);
+            assert.deepEqual(dic.values(), {});
             assert.strictEqual(!!dic, true);
         });
     });

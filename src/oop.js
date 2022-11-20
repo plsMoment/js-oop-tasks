@@ -10,6 +10,10 @@ class Point {
         this.y = y;
     }
 
+    vectorLengthToCenter() {
+        return Math.sqrt(this.x**2 + this.y**2);
+    }
+
 }
 
 /**
